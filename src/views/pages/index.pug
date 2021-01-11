@@ -1,0 +1,44 @@
+doctype
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title REST Countries
+        link(rel="icon" type="image/png" href="assets/icons/favicon.png")
+        link(rel="stylesheet", href="css/styles.css")
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+
+    body
+       header.header
+         nav.header__navegation
+          .header__title Where in the World?
+          .switch
+            img(src="assets/moon.svg" alt="luna").switch__image#image
+            h1.switch__titlemode Dark Mode
+       main.container
+          section.container.container__search
+            input(type="text", placeholder="Search for a country").container__input
+            .card.card__options.options#continents
+              .card__selectbox.select-box
+                .card__optionscontainer.options-container
+                   .card__option.option
+                     input(type="radio" class="radio" id="Africa" name="continents")
+                     label(for="Africa") Africa
+                   .card__option.option
+                     input(type="radio" class="radio" id="Americas" name="continents")
+                     label(for="Americas") America
+                   .card__option.option
+                     input(type="radio" class="radio" id="Asia" name="continents")
+                     label(for="Asia") Asia
+                   .card__option.option
+                     input(type="radio" class="radio" id="Europe" name="continents")
+                     label(for="Europe") Europa
+                   .card__option.option
+                     input(type="radio" class="radio" id="Oceania" name="continents")
+                     label(for="Oceania") Oceania
+                .card__select.selected Filter by Regions
+          section.container--country.container-country#container-country
+
+    script(src="js/scripts-min.js")

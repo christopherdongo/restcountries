@@ -1,0 +1,11 @@
+
+*,
+*::after, *::before{
+    box-sizing: border-box;
+} 
+
+
+body{
+    background-color: var(--verylightgray);
+    height: 100vh;
+}

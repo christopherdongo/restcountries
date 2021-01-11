@@ -1,0 +1,60 @@
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  &__search {
+      position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+    flex-direction: column;
+    padding-top: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @media screen and (min-width:768px){
+      flex-direction: row;
+      justify-content: space-between;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
+  }
+    &__input {
+      width: 100%;
+      font-size: 16px;
+      line-height: 22px;
+      padding: 14px;
+      padding-left: 80px;
+      padding-right: 50px;
+      border-radius: 10px;
+      background-color: white;
+      -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1),
+        0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+      box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1),
+        0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+      border: 0px;
+      position: relative;
+      @media screen and (min-width:768px){
+        width: 400px;
+      }
+      &:before{
+        content: url("/assets/search.svg");
+        position: absolute;
+        top: -15px;
+        left: 50%;
+        width: 20px;
+        height: 30px;
+        border: 17px solid transparent;
+        border-top-width: 0;
+        z-index: 1000;
+        background-color: black;
+      }
+    }
+    &__options{
+      padding: 10px;
+      width: 70%;
+    }     
+}
