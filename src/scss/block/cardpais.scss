@@ -1,0 +1,26 @@
+.card-paises {
+  width: 280px;
+  border-radius: 10px;
+  height: 380px;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  border: 0px;
+
+  &__container1 {
+    width: 280px;
+    height: 150px;
+    border-radius: 10px;
+    &__imagen {
+      display: block;
+      width: 280px;
+      height: 100%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+  }
+  &__container2{
+      padding: 2rem 1rem 2.5rem 1rem;
+  }
+}

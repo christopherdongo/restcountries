@@ -1,8 +1,5 @@
 .container {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
   &__search {
       position: relative;
     width: 100%;
@@ -56,5 +53,30 @@
     &__options{
       padding: 10px;
       width: 70%;
-    }     
-}
+    }
+
+    &__country{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      grid-row: 1fr;
+      flex-direction:column ;
+      padding-left:2rem;
+      padding-right: 2rem;
+      padding-top: 2rem;
+      place-content: center;
+      place-items: center;
+
+      @media screen and (min-width:768px){
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media screen and (min-width:992px){
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media screen and (min-width:1440px){
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+    }
+    
+  }

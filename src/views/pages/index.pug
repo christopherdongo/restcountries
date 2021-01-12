@@ -18,27 +18,27 @@ html(lang='en')
             img(src="assets/moon.svg" alt="luna").switch__image#image
             h1.switch__titlemode Dark Mode
        main.container
-          section.container.container__search
+          section.container__search
             input(type="text", placeholder="Search for a country").container__input
             .card.card__options.options#continents
               .card__selectbox.select-box
                 .card__optionscontainer.options-container
                    .card__option.option
-                     input(type="radio" class="radio" id="Africa" name="continents")
+                     input(type="radio" class="radio" id="Africa" name="continentes" value="Africa")
                      label(for="Africa") Africa
                    .card__option.option
-                     input(type="radio" class="radio" id="Americas" name="continents")
+                     input(type="radio" class="radio" id="Americas" name="continentes" value="Americas")
                      label(for="Americas") America
                    .card__option.option
-                     input(type="radio" class="radio" id="Asia" name="continents")
+                     input(type="radio" class="radio" id="Asia" name="continentes" value="Asia")
                      label(for="Asia") Asia
                    .card__option.option
-                     input(type="radio" class="radio" id="Europe" name="continents")
+                     input(type="radio" class="radio" id="Europe" name="continentes" value="Europe")
                      label(for="Europe") Europa
                    .card__option.option
-                     input(type="radio" class="radio" id="Oceania" name="continents")
+                     input(type="radio" class="radio" id="Oceania" name="continentes" value="Oceania")
                      label(for="Oceania") Oceania
                 .card__select.selected Filter by Regions
-          section.container--country.container-country#container-country
+          section.container__country#container-country
 
     script(src="js/scripts-min.js")
