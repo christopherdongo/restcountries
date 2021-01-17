@@ -1,7 +1,7 @@
 .card-paises {
-  width: 280px;
+  width: 265px;
   border-radius: 10px;
-  height: 380px;
+  height: 335px;
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1),
     0px 1px 3px 0px rgba(0, 0, 0, 0.08);
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1),
@@ -9,18 +9,47 @@
   border: 0px;
 
   &__container1 {
-    width: 280px;
-    height: 150px;
+    width: 265px;
+    height: 160px;
     border-radius: 10px;
     &__imagen {
       display: block;
-      width: 280px;
-      height: 100%;
+      width: 265px;
+      height: 160px;
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
+      object-fit: cover;
     }
   }
   &__container2{
-      padding: 2rem 1rem 2.5rem 1rem;
+    height: 175px;
+      padding: 1rem 1rem 2.5rem 1rem;
+
+      &__pais{
+        font-size: 1.5rem;
+        font-family: 'Nunito Sans' Arial, Helvetica, sans-serif;
+        font-weight: 700;
+      }
+      &__population{
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+        font-family: 'Nunito Sans' Arial, Helvetica, sans-serif;
+        font-weight: 500;
+      }
+      &__region{
+        font-size: 1rem;
+        margin-bottom: 0.3rem;
+        font-family: 'Nunito Sans' Arial, Helvetica, sans-serif;
+        font-weight: 500;
+      }
+      &__capital{
+        font-size: 1rem;
+        font-family: 'Nunito Sans' Arial, Helvetica, sans-serif;
+        font-weight: 500;
+      }
+
+  }
+  &__link{
+    cursor: pointer;
   }
 }

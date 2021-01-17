@@ -15,8 +15,9 @@
     @media screen and (min-width:768px){
       flex-direction: row;
       justify-content: space-between;
-      padding-left: 2.5rem;
-      padding-right: 2.5rem;
+      padding-left: 3.5rem;
+      padding-right: 3.5rem;
+      height: 100px;
     }
   }
     &__input {
@@ -35,10 +36,10 @@
       border: 0px;
       position: relative;
       @media screen and (min-width:768px){
-        width: 400px;
+        width: 350px;
       }
       &:before{
-        content: url("/assets/search.svg");
+        content: url("/assets/arrown.svg");
         position: absolute;
         top: -15px;
         left: 50%;
@@ -55,7 +56,7 @@
       width: 70%;
     }
 
-    &__country{
+    &__country2{
       display: grid;
       grid-template-columns: 1fr;
       gap: 2.5rem;
