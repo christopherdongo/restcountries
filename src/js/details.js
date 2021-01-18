@@ -1,16 +1,13 @@
 
-    window.addEventListener('load', (e)=>{
-        e.preventDefault();
+    window.addEventListener('load', ()=>{
         const parametrosURL = new URLSearchParams(window.location.search)
         const idCliente = parametrosURL.get('id')
         if(idCliente){
           getPaisID(idCliente)
         }
     })
-
 //variables
   let container = document.getElementById('detail_section2');    
-    
     const getPaisID =(id)=>{
         fetch(`https://restcountries.eu/rest/v2/alpha/${id}`)
         .then( res => res.json())
@@ -18,7 +15,6 @@
     }
     
     const createElementDetails=(data)=>{
-        console.log(data)
       //creacion de contenedores
       const fragment = document.createDocumentFragment();
       const article = document.createElement('article');
@@ -39,8 +35,6 @@
       const currenci = document.createElement('p');
       const lenguage = document.createElement('p');
       const titleborder = document.createElement('h2')
-      
-
       //añadir clas clases y id
       article.classList="container-details__article";
       div1.className="container-details__details-div1--section1";
@@ -63,8 +57,6 @@
       divborderv.className="container-details__border-container";
       divborderv.id="border-container";
       titleborder.className="container-details__titleborder";
-      
-
       //añadir datos
       img.src=data.flag;
       pais.textContent= data.name;
@@ -80,10 +72,10 @@
 
       data.borders.map( item => {
         let border = document.createElement('a');
+             border.className="container-details__link-paisborder"
              border.textContent=item;       
         return divborderv.appendChild(border)
       })
-  
       //añadir hijos al hijo
       div1.appendChild(img);
       detailfirts.appendChild(pais);
@@ -95,23 +87,12 @@
       detailseconds.appendChild(domain);
       detailseconds.appendChild(currenci);
       detailseconds.appendChild(lenguage);
-      /*div2.appendChild(pais);
-      div2.appendChild(native);
-      div2.appendChild(population);
-      div2.appendChild(region);
-      div2.appendChild(sub_region);
-      div2.appendChild(capital);
-            div2.appendChild(domain);
-      div2.appendChild(currenci);
-      div2.appendChild(lenguage);
-      */
+      /*añadiendo el chield*/ 
       div2.appendChild(detailfirts)
       div2.appendChild(detailseconds)
       containerBorder.appendChild(titleborder);
       containerBorder.appendChild(divborderv);
       div2.appendChild(containerBorder)
-      
-      
      /*añadir hijos al padre*/ 
       article.appendChild(div1);
       article.appendChild(div2);

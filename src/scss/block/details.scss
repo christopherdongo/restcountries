@@ -1,90 +1,129 @@
-.container-details{
+.container-details {
+  display: flex;
+  flex-direction: column;
+
+  &__section1 {
+    display: flex;
+    height: 80px;
+    margin-top: 2.5rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    justify-content: flex-start;
+    align-items: center;
+    @media screen and (min-width: 768px) {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+  &__link {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 110px;
+    padding: 0.5rem;
+    background-color: var(--white);
+    border-radius: 5px;
+    color: black;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  &__section2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    @media screen and (min-width: 768px) {
+      margin-left: 3rem;
+      margin-right: 3rem;
+    }
+    @media screen and (min-width: 1440px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  &__article {
+    width: 310px;
+    margin-top: 2rem;
+
+    @media screen and (min-width: 768px) {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 2fr 2fr;
+      gap: 2.5rem;
+    }
+    @media screen and (min-width: 1440px) {
+      margin-left: 3rem;
+      margin-right: 3rem;
+    }
+  }
+  &__details-div1 {
+    width: 100%;
+  }
+  &__details-div2 {
+    width: 100%;
+  }
+  &__imagen-d {
+    width: 100%;
+    height: 200px;
+
+    @media screen and (min-width: 768px) {
+      height: 350px;
+    }
+  }
+  /*modificadores*/
+  &__pais-d {
+    margin: 0;
+  }
+
+  &__detailsfirsts {
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
+    gap: 10px;
+  }
+  &__detailseconds {
+    margin-top: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__containerborder-d {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
 
-    &__section1{
-        display: flex;
-        height: 80px;
-        margin-top: 2.5rem;
-        padding-right:2rem ;
-        padding-left: 2rem;
-        justify-content: flex-start;
-        align-items: center;
-        @media screen and (min-width:768px){
-            padding-left: 3rem;
-            padding-right: 3rem;
-        }
-    }
-    &__link{
-        font-size: 14px;
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        width: 110px;
-        padding: 0.5rem;
-        background-color: var(--white);
-        border-radius: 5px;
-        color: black;
-        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06);
+  &__border-container {
+    display: flex;
+    gap: 5px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  &__link-paisborder {
+      text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 120px;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1),
+      0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1),
+      0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+    border: 0px;
+    cursor: pointer;
 
+    &:hover{
+        background-color: beige;
     }
-    &__section2{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-left: 2rem;
-        margin-right: 2rem;
-      @media screen and (min-width:768px){
-        margin-left: 3rem;
-        margin-right: 3rem;
-      }
-      @media screen and (min-width:1440px){
-          margin-left:0 ;
-          margin-right: 0;
-      }
-    }
-    &__article{
-        width: 310px;
-        margin-top: 2rem;
+  }
 
-        @media screen and (min-width:768px){
-            width: 100%;
-            display: grid;
-            grid-template-columns: 2fr 2fr;
-            gap: 2.5rem;
-        }
-        @media screen and (min-width:1440px){
-            margin-left: 3rem;
-            margin-right: 3rem;
-        }
-        
-    }
-    &__details-div1{
-        width: 100%;
-    }
-    &__details-div2{
-       width: 100%;
-    }
-    &__imagen-d{
-        width: 100%;
-        height: 200px;
-
-        @media screen and (min-width:768px){
-            height: 350px;
-        }
-    }
-    /*modificadores*/
-    &__pais-d{
-        margin: 0;
-    }
-
-&--section1{
-
-}
-&--section2{
+  /*modificadores*/
+  &--section1 {
+  }
+  &--section2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-}
-
+  }
 }

@@ -1,11 +1,8 @@
-
-
 (function () {
   window.addEventListener("DOMContentLoaded", () => {
     AddPaises();
     ViewPaises();
   });
-
   /*variables*/
   const selected = document.querySelector(".selected");
   const optionsContainer = document.querySelector(".options-container");
@@ -14,13 +11,13 @@
   const loader = document.getElementById('loader');
   const form = document.getElementById('form');
   const search = document.getElementById('search__input');
+  var paises;
 
   form.addEventListener('submit', (e)=>{
      e.preventDefault();
      if(search.value.length >= 3){
       AddName(search.value)
      }
-     
   })
 
   search.addEventListener('change', ()=>{
@@ -29,13 +26,8 @@
     }
   })
 
-  
- 
-  var paises;
-
   //variables globales
   /*funcion al iniciarse*/
-
   /*funcion para el select*/
   selected.addEventListener("click", () => {
     optionsContainer.classList.toggle("active");
@@ -50,7 +42,6 @@
   });
 
   /*cargar los mapas*/
-
   const AddRegion=(region)=>{
     SpinnerViews('block');
     Removechild();
@@ -59,8 +50,7 @@
       .then((res)=> res.json())
       .then((result) => ViewPaises(result))
       SpinnerViews('none')
-    },500)
-    
+    },800)
   }
   const AddName=(name)=>{
     SpinnerViews('block');
@@ -70,7 +60,7 @@
       .then(res=> res.json())
       .then((result) => ViewPaises(result))
       SpinnerViews('none');
-    },500)
+    },800)
   }
   const AddPaises = () => {
     SpinnerViews('block');
@@ -80,12 +70,11 @@
       .then((res) => res.json())
       .then((result) => ViewPaises(result));
       SpinnerViews('none');
-    },500)
+    },800)
   };
 
   const ViewPaises = (data) => {
     paises = data;
-
     if (data) {
         paises.map((item, index) => {
         const fragment = document.createDocumentFragment();
@@ -128,13 +117,11 @@
         //añadir valores
         return ContainerCountry.appendChild(fragment);
       });
-      
     }
   };
 
   /*remover*/
   const Removechild=()=>{
-
     if (ContainerCountry.children.length >=1) {
       while (ContainerCountry.firstChild) {
         ContainerCountry.removeChild(ContainerCountry.firstChild);
