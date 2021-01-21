@@ -36,9 +36,9 @@
       const titleborder = document.createElement('h2')
       //añadir clas clases y id
       article.classList="container-details__article";
-      div1.className="container-details__details-div1--section1";
+      div1.className="container-details__details-div1";
       div1.id="details-div1";
-      div2.className="container-details__details-div2--section2";
+      div2.className="container-details__details-div2";
       div2.id="details-div2";
       containerBorder.className="container-details__containerborder-d";
       detailfirts.className="container-details__detailsfirsts";

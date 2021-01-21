@@ -59,7 +59,7 @@
       .then(res=> res.json())
       .then((result) => ViewPaises(result))
       SpinnerViews('none');
-    },800)
+    },500)
   }
   const AddPaises = () => {
     SpinnerViews('block');
@@ -69,7 +69,7 @@
       .then((res) => res.json())
       .then((result) => ViewPaises(result));
       SpinnerViews('none');
-    },800)
+    },500)
   };
 
   const ViewPaises = (data) => {
