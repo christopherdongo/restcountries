@@ -1,7 +1,8 @@
 .card {
-
+   
   &__options {
-    
+    background: var(--select);
+    z-index: 2000;
   }
   &__selectbox {
     width: 220px;
@@ -13,25 +14,30 @@
       0px 1px 3px 0px rgba(0, 0, 0, 0.08);
     border: 0px;
     border-radius: 8px;
+    background: var(--white);
+    z-index: 2000;
+    color: var(--headertitle);
   }
   &__optionscontainer{
-    transform: translateY(10%);
+    
   }
+
   .select-box .options-container {
-    background: var(--white);
-    color: black;
+    background: var(--select);
+    color: var(--headertitle);
     max-height: 0;
     width: 100%;
-    opacity: 1;
     transition: all 0.4s;
     border-radius: 8px;
     overflow: hidden;
     order: 1;
+    z-index: 2000;
+    color: var(--headertitle);
   }
   .selected {
-    background: var(--white);
     border-radius: 8px;
-    color: black;
+    color: var(--headertitle);
+    z-index: 2000;
     position: relative;
     order: 0;
     -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1),
@@ -41,11 +47,12 @@
     border: 0px;
   }
   .selected::after {
-    content: "";
-    background: url("/assets/arrow-down-outline.svg");
+    content: "<i class="fa fa-arrow-up"></i>";
+    //background: '';
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
+    background: var(--select);
     height: 40%;
     width: 40px;
     right: 5px;
@@ -53,13 +60,13 @@
     transition: all 0.4s;
   }
   .select-box .options-container.active {
-    
-    max-height: 350px;
-    opacity: 1;
+    max-height: 340px;
+    z-index: 2000;
+  
   }
   .select-box .options-container.active + .selected::after {
     transform: rotateX(180deg);
-    top: 15px;
+   
   }
  /* .select-box .options-container::-webkit-scrollbar {
     width: 8px;
@@ -76,6 +83,7 @@
   }
 
   .select-box .option:hover {
+    //background: var(--select);
     background: #414b57;
   }
   .select-box label {

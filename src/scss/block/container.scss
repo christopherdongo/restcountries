@@ -35,6 +35,12 @@
         0px 1px 3px 0px rgba(0, 0, 0, 0.08);
       border: 0px;
       position: relative;
+      background: var(--inputsearch);
+
+      &::placeholder{
+        color: var(--headertitle);
+      }
+
       @media screen and (min-width:768px){
         width: 350px;
       }

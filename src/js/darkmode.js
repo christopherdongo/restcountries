@@ -7,13 +7,25 @@ const lightTheme = {
     '--darkgraylight':'hsl(0, 0%, 52%)',
     '--verylightgray': 'hsl(0, 0%, 98%)',
     '--white':'hsl(0, 0%, 100%)',
+    '--cardinfo':'hsl(200, 15%, 8%)',
+    '--backgroudcardpais':'hsl(0, 0%, 100%)',
+    '--modeInput':'hsl(0, 0%, 100%)',
+    '--inputsearch':'hsl(0, 0%, 100%)',
+    '--linkdetail':'hsl(0, 0%, 100%)',
+    '--select': 'hsl(0, 0%, 100%)',
 }
 
 const darkTheme = {
     '--darkgraylight':'hsl(209, 23%, 22%)',
     '--verylightgray': 'hsl(207, 26%, 17%)',
     '--white': 'hsl(200, 15%, 8%)',
-    '--headertitle':'hsl(0, 0%, 100%)'
+    '--headertitle':'hsl(0, 0%, 100%)',
+    '--cardinfo':'hsl(0, 0%, 100%)',
+    '--backgroudcardpais':'hsl(209, 23%, 22%)',
+    '--modeINput':'hsl(0, 0%, 52%)',
+    '--inputsearch':'hsl(209, 23%, 22%)',
+    '--linkdetail':'hsl(209, 23%, 22%)',
+    '--select':'hsl(209, 23%, 22%)',
 }
 
 const changeTheme = theme =>{

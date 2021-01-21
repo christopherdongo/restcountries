@@ -13,7 +13,6 @@
         .then( res => res.json())
         .then( result => createElementDetails(result))
     }
-    
     const createElementDetails=(data)=>{
       //creacion de contenedores
       const fragment = document.createDocumentFragment();

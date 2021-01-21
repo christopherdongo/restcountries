@@ -25,7 +25,6 @@
       AddPaises()
     }
   })
-
   //variables globales
   /*funcion al iniciarse*/
   /*funcion para el select*/
