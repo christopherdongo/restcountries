@@ -4,7 +4,7 @@ html(lang='en')
         meta(charset='utf-8')
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title REST Countries Details
-        ink(rel="icon" type="image/png" href="assets/icons/favicon.png")
+        link(rel="icon" type="image/png" href="assets/icons/favicon.png")
         link(rel="stylesheet", href="css/styles.css")
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
@@ -15,11 +15,13 @@ html(lang='en')
          nav.header__navegation
           .header__title Where in the World?
           .switch
-            img(src="assets/sun.svg" alt="luna").switch__image#image
-            h1.switch__titlemode Dark Mode
+             .switch__image#image
+               <i class="fa fa-moon-o fa-lg" aria-hidden="true"></i>
+             h1.switch__titlemode Dark Mode
         section.container-details__section1
           a(href="index.html").container-details__link <i class="fa fa-arrow-left"></i> Back
         section.container-details__section2#detail_section2
+        .loader#loader
 
 
     script(src="js/scripts-min.js")

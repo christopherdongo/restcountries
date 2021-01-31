@@ -16,12 +16,15 @@ html(lang='en')
          nav.header__navegation
           .header__title Where in the World?
           .switch
-            img(src="assets/sun.svg" alt="luna").switch__image#image
+            .switch__image#image
+               <i class="fa fa-moon-o fa-lg aria-hidden="true"></i>
             h1.switch__titlemode Dark Mode
        main.container
           section.container__search
             form.container__form#form
               input(type="text", placeholder="Search for a country...").container__input#search__input
+              .container__icon
+               <i class="fa fa-search"></i>
             .card.card__options.options#continents
               .card__selectbox.select-box
                 .card__optionscontainer.options-container
@@ -41,6 +44,8 @@ html(lang='en')
                      input(type="radio" class="radio" id="Oceania" name="continentes" value="Oceania")
                      label(for="Oceania") Oceania
                 .card__select.selected Filter by Regions
+                  .arrow
+                   <i class="fa fa-arrow-down" aria-hidden="true"></i>
           section.container__country#container-country
             .loader#loader
             .container__country2#container-country2

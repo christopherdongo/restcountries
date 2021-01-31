@@ -1,11 +1,11 @@
 .card {
+  border-radius: 8px;
    
   &__options {
-    background: var(--select);
-    z-index: 2000;
+    background: var(--white);
   }
   &__selectbox {
-    width: 220px;
+    width: 240px;
     display: flex;
     flex-direction: column;
     -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1),
@@ -14,59 +14,72 @@
       0px 1px 3px 0px rgba(0, 0, 0, 0.08);
     border: 0px;
     border-radius: 8px;
-    background: var(--white);
     z-index: 2000;
     color: var(--headertitle);
+    
   }
   &__optionscontainer{
-    
+    transform: translateY(20px);
+   
+  }
+  &__select{
+    padding-left: 3rem;
+  }
+  .select-box{
+    display: flex;
   }
 
   .select-box .options-container {
-    background: var(--select);
     color: var(--headertitle);
     max-height: 0;
     width: 100%;
     transition: all 0.4s;
-    border-radius: 8px;
     overflow: hidden;
     order: 1;
+    opacity: 0;
     z-index: 2000;
-    color: var(--headertitle);
+    border-radius:8px 8px 8px 8px ;
   }
   .selected {
     border-radius: 8px;
     color: var(--headertitle);
     z-index: 2000;
-    position: relative;
     order: 0;
     -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1),
       0px 1px 3px 0px rgba(0, 0, 0, 0.08);
     box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1),
       0px 1px 3px 0px rgba(0, 0, 0, 0.08);
     border: 0px;
+    position: relative;
   }
-  .selected::after {
-    content: "<i class="fa fa-arrow-up"></i>";
-    //background: '';
+  /*.selected::after {
+    content:" ";
+    background: url("/assets/arrow-down.svg");
     background-size: contain;
+    background-color: var(--select);
     background-repeat: no-repeat;
     position: absolute;
-    background: var(--select);
     height: 40%;
-    width: 40px;
-    right: 5px;
+    width: 25px;
+    right:20px;
     top: 15px;
     transition: all 0.4s;
-  }
+  }*/
   .select-box .options-container.active {
     max-height: 340px;
     z-index: 2000;
-  
+    opacity: 1;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.1),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  border: 0px;
+ 
   }
+
   .select-box .options-container.active + .selected::after {
     transform: rotateX(180deg);
-   
+    top:12px;
   }
  /* .select-box .options-container::-webkit-scrollbar {
     width: 8px;
@@ -76,20 +89,30 @@
     border-radius: 0 8px 8px 0;
   }
 
-  .select-box .option,
-  .selected {
-    padding: 12px 24px;
+  .select-box .option, .selected {
+    padding: 0.9rem;
     cursor: pointer;
+    background:var(--select) ;
+    border: 0px;
   }
 
   .select-box .option:hover {
-    //background: var(--select);
-    background: #414b57;
+    background: var(--verylightgray);
   }
   .select-box label {
     cursor: pointer;
   }
   .select-box .option .radio  {
    display: none;
+  }
+  .option{
+    background: var(--white);
+  }
+
+  .arrow{
+    position: absolute;
+    top: 15px;
+    right: 2rem;
+    color: var(--cardinfo);
   }
 }

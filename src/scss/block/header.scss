@@ -18,8 +18,8 @@
       padding-right: 1.5rem;
       width: 100%;
       @media screen and(min-width:768px){
-        padding-left: 2.8rem;
-        padding-right: 2.8rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
     }
   }
     &__title {
@@ -48,11 +48,9 @@
     }
 
     &__image{
+      color: var(--cardinfo);
         width: 30px;
-        padding-bottom: 6px;
         padding-right: 8px;
         cursor: pointer;
     }
-
-
 }

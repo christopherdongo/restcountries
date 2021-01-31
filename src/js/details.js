@@ -1,4 +1,6 @@
 
+  const loader = document.getElementById('loader');
+    
     window.addEventListener('load', ()=>{
         const parametrosURL = new URLSearchParams(window.location.search)
         const idCliente = parametrosURL.get('id')
@@ -9,11 +11,17 @@
 //variables
   let container = document.getElementById('detail_section2');    
     const getPaisID =(id)=>{
-        fetch(`https://restcountries.eu/rest/v2/alpha/${id}`)
-        .then( res => res.json())
-        .then( result => createElementDetails(result))
+      SpinnerViews('block')
+    setTimeout( ()=>{
+      fetch(`https://restcountries.eu/rest/v2/alpha/${id}`)
+      .then( res => res.json())
+      .then( result => createElementDetails(result))
+      SpinnerViews('none')
+    }, 500)
+    
     }
     const createElementDetails=(data)=>{
+      
       //creacion de contenedores
       const fragment = document.createDocumentFragment();
       const article = document.createElement('article');
@@ -100,6 +108,13 @@
       container.appendChild(fragment);
 
     } 
+
+
+      /*spinner*/
+  const SpinnerViews = (views) => {
+    loader.style.display = views;
+  };
+
 
 
 

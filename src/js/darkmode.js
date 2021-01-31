@@ -1,54 +1,41 @@
-const darkmode = document.getElementById('image');
-const styles = document.documentElement.style;
-let val = !true
+const themeButton = document.getElementById('image');
+let valor = true;
+// Nombre de la clase con la que activamos el tema dark
+const darkTheme = 'dark-theme'
+// Tema seleccionado por el usuario anteriormente (si es que lo hizo)
+const selectedTheme = localStorage.getItem('selected-theme')
+// Preguntamos qué tema tiene el usuario en su sistema
+// true = dark
+// false = light
+const userHasDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+// Obtenemos el tema actual que tiene la interfaz validando la clase dark-theme
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
 
-const lightTheme = {
-    '--headertitle':'hsl(200, 15%, 8%)',
-    '--darkgraylight':'hsl(0, 0%, 52%)',
-    '--verylightgray': 'hsl(0, 0%, 98%)',
-    '--white':'hsl(0, 0%, 100%)',
-    '--cardinfo':'hsl(200, 15%, 8%)',
-    '--backgroudcardpais':'hsl(0, 0%, 100%)',
-    '--modeInput':'hsl(0, 0%, 100%)',
-    '--inputsearch':'hsl(0, 0%, 100%)',
-    '--linkdetail':'hsl(0, 0%, 100%)',
-    '--select': 'hsl(0, 0%, 100%)',
-}
-
-const darkTheme = {
-    '--darkgraylight':'hsl(209, 23%, 22%)',
-    '--verylightgray': 'hsl(207, 26%, 17%)',
-    '--white': 'hsl(200, 15%, 8%)',
-    '--headertitle':'hsl(0, 0%, 100%)',
-    '--cardinfo':'hsl(0, 0%, 100%)',
-    '--backgroudcardpais':'hsl(209, 23%, 22%)',
-    '--modeINput':'hsl(0, 0%, 52%)',
-    '--inputsearch':'hsl(209, 23%, 22%)',
-    '--linkdetail':'hsl(209, 23%, 22%)',
-    '--select':'hsl(209, 23%, 22%)',
-}
-
-const changeTheme = theme =>{
-    const customStyle = Object.keys(theme)
-    for(const style of customStyle){
-        console.log(theme[style])
-        styles.setProperty(style, theme[style])
+// Validamos si el usuario anteriormente elegió un tema
+if (selectedTheme) {
+  // Si se cumple la validación, preguntamos cuál fue el tema para saber si activamos o desactivamos el dark
+  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+} else {
+    
+  // Preguntamos si el usuario tiene tema dark en su sistema
+  // En caso de que sí, lo activamos en la interfaz
+  if (userHasDarkTheme){
+      document.body.classList.add(darkTheme)
+      
     }
 }
 
-darkmode.addEventListener('click', (e)=>{
-    if(val){
-        ChangeValor(false)
-        darkmode.src="assets/sun.svg"
-        changeTheme(lightTheme)
-    }else{
-        ChangeValor(true)
-        darkmode.src="assets/moon.svg"
-        changeTheme(darkTheme)
-          
-    }
+// Activar/desactivar el tema manualmente con el botón
+window.onload=themeButton.addEventListener('click', () => {
+
+  // Agregamos o quitamos el tema dark
+  document.body.classList.toggle(darkTheme)
+  // Guardamos el tema actual que eligió el usuario
+  localStorage.setItem('selected-theme', getCurrentTheme())
 })
 
-const ChangeValor=(valor)=>{
-    val=valor
-}
+
+
+
+
+

@@ -1,4 +1,17 @@
 
+:root{
+  --headertitle:hsl(200, 15%, 8%);
+  --darkgraylight:hsl(0, 0%, 52%);
+  --verylightgray: hsl(0, 0%, 98%);
+  --white:hsl(0, 0%, 100%);
+  --cardinfo:hsl(200, 15%, 8%);
+  --backgroudcardpais:hsl(0, 0%, 100%);
+  --modeInput:hsl(0, 0%, 100%);
+  --inputsearch:hsl(0, 0%, 100%);
+  --linkdetail:hsl(0, 0%, 100%);
+  --select:hsl(0, 0%, 100%);
+}
+
 *,
 *::after, *::before{
     box-sizing: border-box;
@@ -11,16 +24,31 @@ a{
 
 }
 
+html{
+  height: 100vh;
+}
+body.dark-theme{
+  --darkgraylight:hsl(209, 23%, 22%);
+  --verylightgray: hsl(207, 26%, 17%);
+  --white: hsl(200, 15%, 8%);
+  --headertitle:hsl(0, 0%, 100%);
+  --cardinfo:hsl(0, 0%, 100%);
+  --backgroudcardpais:hsl(209, 23%, 22%);
+  --modeInput:hsl(0, 0%, 52%);
+  --inputsearch:hsl(209, 23%, 22%);
+  --linkdetail:hsl(209, 23%, 22%);
+  --select:hsl(209, 23%, 22%);
+}
 
 body{
-    background-color: var(--verylightgray);
-    height: 100vh;
-    font-family: 'Nunito Sans' Arial, Helvetica, sans-serif;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  
+  background-color: var(--verylightgray);
+  height: 100vh;
+  font-family: 'Nunito Sans' Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
 }

@@ -40,6 +40,7 @@
     margin-left: 2rem;
     margin-right: 2rem;
     color: var(--cardinfo);
+    padding-bottom: 2.5rem;
     @media screen and (min-width: 992px) {
       margin-left: 3rem;
       margin-right: 3rem;
@@ -99,14 +100,14 @@
     color:var(--headertitle);
   }
   &__detailseconds {
-    padding-top: 1rem;
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     gap: 10px;
     color:var(--headertitle);
 
     @media screen and (min-width:992px){
-      margin-top: 5rem;
+      margin-top: 4rem;
     }
   }
   &__containerborder-d {
@@ -114,21 +115,27 @@
 
     @media screen and (min-width:992px){
       display: grid;
-      grid-template-columns:40% 1fr ;
+      gap: 15px;
+      grid-template-columns:1fr 1fr ;
       place-content: center;
+      padding-top: 2rem;
     }
+
   }
   &__border-container {
-    display: flex;
     gap: 20px;
-    flex-wrap: wrap;
-    align-items: center;
-    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 120px));
+    grid-row: repeat(3, 1fr);
     color:var(--headertitle);
-
-    @media screen and (min-width:992px) {
-        padding-top: 0px;
-    }
+    :nth-child(3){
+      grid-column: 1/2;
+      grid-row: 2/3;
+      }
+    :nth-child(4){
+      grid-column: 2/3;
+      grid-row: 1/2;
+      }
   }
   &__link-paisborder {
     color:var(--headertitle);
@@ -145,7 +152,11 @@
     background: var(--backgroudcardpais);
   }
   &__titleborder{
-    
+    padding-top:2rem ;
+
+    @media screen and (min-width:992px){
+       padding-top: 0;
+    }
   }
 
   /*modificadores*/
