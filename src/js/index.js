@@ -41,23 +41,34 @@
   });
 
   /*cargar los mapas*/
-  const AddRegion=(region)=>{
+  const AddRegion=(regions)=>{
+    console.log(regions)
     SpinnerViews('block');
     Removechild();
     setTimeout( ()=>{
-      fetch(`https://restcountries.eu/rest/v2/region/${region}`)
+      /*fetch(`https://restcountries.com/v3.1/region/${region}`)
       .then((res)=> res.json())
-      .then((result) => ViewPaises(result))
+      .then((result) => ViewPaises(result))*/
+      const data = JSON.parse(localStorage.getItem('countries')).filter(({region}) => region===regions)
+      ViewPaises(data);
       SpinnerViews('none')
     },800)
   }
+
+
   const AddName=(name)=>{
+    console.log(name)
     SpinnerViews('block');
     Removechild();
     setTimeout(()=>{
-      fetch(`https://restcountries.eu/rest/v2/name/${name}?fullText=true`)
+      /*fetch(`https://restcountries.com/v3.1/name/${name}?fullText=true`)
       .then(res=> res.json())
-      .then((result) => ViewPaises(result))
+      .then((result) => {
+        console.log(result)
+        ViewPaises(result);
+      })*/
+      const data = JSON.parse(localStorage.getItem('countries')).filter((item) => item.name.common===capitalizarPrimeraLetra(name) )
+      ViewPaises(data);
       SpinnerViews('none');
     },500)
   }
@@ -65,12 +76,26 @@
     SpinnerViews('block');
     Removechild();
     setTimeout( ()=>{
-      fetch("https://restcountries.eu/rest/v2/all")
+      if(JSON.parse(localStorage.getItem('countries'))){
+        const data = JSON.parse(localStorage.getItem('countries'))
+        ViewPaises(data);
+    }else{
+      fetch("https://restcountries.com/v3.1/all")
       .then((res) => res.json())
-      .then((result) => ViewPaises(result));
-      SpinnerViews('none');
-    },500)
+      .then((result) => {
+        localStorage.setItem('countries',JSON.stringify(result))
+        const data = JSON.parse(localStorage.getItem('countries'))
+        ViewPaises(data);
+      });
+      
+    }
+    SpinnerViews('none');
+    },1000)
   };
+
+  const capitalizarPrimeraLetra=(str) =>{
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
 
   const ViewPaises = (data) => {
     paises = data;
@@ -97,8 +122,8 @@
         capital.className="card-paises__container2__capital"
         img.alt = item.name;
         newElement.id = index;
-        Pais.innerHTML = item.name;
-        img.src = item.flag;
+        Pais.innerHTML = item.name.common;
+        img.src = item.flags.png;
         enlace.href=`details.html?id=${item.alpha2Code}`
         Population.innerHTML = `<strong>Population:</strong> ${item.population}`;
         Region.innerHTML = `<strong>Region:</strong> ${item.region}`;
