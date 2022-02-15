@@ -66,8 +66,8 @@
     }
     &__country2{
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
+      grid-template-columns: repeat( auto-fill, minmax(265px, 1fr) );
+      gap: 2rem;
       grid-row: 1fr;
       flex-direction:column ;
       padding-left:2rem;
@@ -76,7 +76,7 @@
       place-content: center;
       place-items: center;
 
-      @media screen and (min-width:768px){
+     /* @media screen and (min-width:768px){
         grid-template-columns: repeat(2, 1fr);
       }
       @media screen and (min-width:992px){
@@ -84,7 +84,7 @@
       }
       @media screen and (min-width:1440px){
         grid-template-columns: repeat(4, 1fr);
-      }
+      }*/
     }
 
     &__form{

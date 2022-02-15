@@ -1,6 +1,6 @@
 
   const loader = document.getElementById('loader');
-    
+
     window.addEventListener('load', ()=>{
         const parametrosURL = new URLSearchParams(window.location.search)
         const idCliente = parametrosURL.get('id')
@@ -12,16 +12,16 @@
   let container = document.getElementById('detail_section2');    
     const getPaisID =(id)=>{
       SpinnerViews('block')
-    setTimeout( ()=>{
-      fetch(`https://restcountries.eu/rest/v2/alpha/${id}`)
-      .then( res => res.json())
-      .then( result => createElementDetails(result))
-      SpinnerViews('none')
-    }, 500)
+      setTimeout(()=>{
+        const dev = JSON.parse(localStorage.getItem('countries')).filter( item => item.cca3 === id)
+        createElementDetails(dev);
+        SpinnerViews('none');
+      },500)
     
     }
-    const createElementDetails=(data)=>{
-      
+    const createElementDetails=(dev)=>{
+           const data = dev?.[0];
+           console.log(data)
       //creacion de contenedores
       const fragment = document.createDocumentFragment();
       const article = document.createElement('article');
@@ -65,22 +65,23 @@
       divborderv.id="border-container";
       titleborder.className="container-details__titleborder";
       //añadir datos
-      img.src=data.flag;
-      pais.textContent= data.name;
-      native.innerHTML=`<strong>Native Name:</strong> ${data.nativeName}`
+      img.src=data.flags.png;
+      pais.textContent= data.name.common;
+      native.innerHTML=`<strong>Native Name:</strong> ${data.name.official}`
       population.innerHTML=`<strong>Population:</strong> ${data.population}`;
       region.innerHTML=`<strong>Region:</strong> ${data.region}`;
       sub_region.innerHTML=`<strong>Sub Region:</strong> ${data.subregion}`;
-      capital.innerHTML=`<strong>Capital:</strong> ${data.capital}`;
-      domain.innerHTML=`<strong>Top Level Domain:</strong> ${data.topLevelDomain[0]}`;
-      currenci.innerHTML=`<strong>Currencies:</strong> ${data.currencies[0].name}`
-      lenguage.innerHTML=`<strong>Languages:</strong> ${data.languages.map( item => item.name)}`
-      titleborder.innerHTML=`<strong>Border Countries:</strong>`
+      capital.innerHTML=`<strong>Capital:</strong> ${data.capital?.[0]}`;
+      domain.innerHTML=`<strong>Top Level Domain:</strong> ${data.tld?.[0]}`;
+      currenci.innerHTML=`<strong>Currencies:</strong> ${Object.values(data.currencies)[0]?.name} ${Object.values(data.currencies)[0]?.symbol}`
+      lenguage.innerHTML=`<strong>Languages:</strong> ${Object.values(data.languages).map( item => item)}`
+      titleborder.innerHTML=`<strong>Border Countries:</strong>` 
 
-      data.borders.map( item => {
+      data.borders?.map( item => {
         let border = document.createElement('a');
              border.className="container-details__link-paisborder"
-             border.textContent=item;       
+             border.textContent=item;
+             border.href=`details.html?id=${item}`       
         return divborderv.appendChild(border)
       })
       //añadir hijos al hijo
@@ -109,11 +110,10 @@
 
     } 
 
-
       /*spinner*/
-  const SpinnerViews = (views) => {
-    loader.style.display = views;
-  };
+      const SpinnerViews = (views) => {
+        loader.style.display = views;
+      };
 
 
 

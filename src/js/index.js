@@ -124,7 +124,7 @@
         newElement.id = index;
         Pais.innerHTML = item.name.common;
         img.src = item.flags.png;
-        enlace.href=`details.html?id=${item.alpha2Code}`
+        enlace.href=`details.html?id=${item.cca3}`
         Population.innerHTML = `<strong>Population:</strong> ${item.population}`;
         Region.innerHTML = `<strong>Region:</strong> ${item.region}`;
         capital.innerHTML = `<strong>Capital:</strong> ${item.capital}`;

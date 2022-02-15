@@ -70,6 +70,7 @@
     display: grid;
     grid-template-columns: 1fr;
     color:var(--headertitle);
+    gap: 1rem;
 
     @media screen and (min-width:992px){
       grid-template-columns: 1fr 1fr;
